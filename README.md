@@ -1,4 +1,6 @@
-# todo
+# TODO
+
+A simple TODO full stack application using AWS Amplify. The Authentication module is provided using AWS Cognito. 
 
 ## Project setup
 ```
@@ -19,6 +21,8 @@ yarn build
 ```
 yarn lint
 ```
+### Demo
+https://dev.d2j7qe756odvvl.amplifyapp.com/ 
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).

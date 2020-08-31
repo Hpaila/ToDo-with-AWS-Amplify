@@ -3,9 +3,12 @@
     <!-- The rest of your app code -->
     <div id="app">
       <h1>Todo App</h1>
+      <button v-on:click="accessLambda">Lambda</button>
+      <p>{{ message }}</p>
       <input type="text" v-model="name" placeholder="Todo name" />
       <input type="text" v-model="description" placeholder="Todo description" />
       <button v-on:click="createTodo">Create Todo</button>
+
       <div v-for="item in todos" :key="item.id">
         <h3>{{ item.name }}</h3>
         <p>{{ item.description }}</p>
@@ -32,6 +35,7 @@ export default {
       name: "",
       description: "",
       todos: [],
+      message: "",
     };
   },
   methods: {
@@ -61,6 +65,23 @@ export default {
           this.todos = [...this.todos, todo];
         },
       });
+    },
+    accessLambda() {
+      let apiName = "noderestapi";
+      let path = "/nodeapi";
+      const myInit = {
+        // OPTIONAL
+        headers: {}, // OPTIONAL
+        response: true, // OPTIONAL (return the entire Axios response object instead of only response.data)
+      };
+      API.get(apiName, path, myInit)
+        .then((response) => {
+          this.message = response.data.success;
+          console.log(response.data.success);
+        })
+        .catch((error) => {
+          console.log(error.response);
+        });
     },
   },
 };

@@ -1,6 +1,7 @@
 # TODO
 
 A simple TODO full stack application using AWS Amplify. The Authentication module is provided using AWS Cognito. 
+AWS Amplify documentation: https://docs.amplify.aws/start/q/integration/vue 
 
 ## Project setup
 ```
